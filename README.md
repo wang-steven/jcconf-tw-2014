@@ -34,3 +34,6 @@ You can also use the included development static server by running the following
 All example are using Gradle. Gradle is downloadable as a zip file at http://www.gradle.org/downloads. Only the binaries are required, so look for the link to gradle-version-bin.zip. (You can also choose gradle-version-all.zip to get the sources and documentation as well as the binaries.)
 
 Unzip the file to your computer, and add the bin folder to your path.
+
+## License
+MIT
