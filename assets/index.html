@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="author" content="Steven Wang">
+    <meta name="description" content="JCConf TW 2014 :: Modern Design Pattern">
+
+    <title>JCConf TW 2014 :: Modern Design Pattern</title>
+
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="vendor/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="vendor/reveal.js/css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="vendor/reveal.js/lib/css/zenburn.css">
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div style="position: absolute; left: 0;bottom: 0;">
+        <img style="width: 50%; height: auto;" src="img/jcc_web_bg.png">
+    </div>
+    <div style="color: #0ABDBD; position: absolute; top: 0; right: 10px;">
+        <h2><em><strong>JCConf Taiwan 2014</strong></em></h2>
+    </div>
+    <div class="reveal">
+            <div class="slides">
+            <!-- title -->
+                <section>
+                    <h1>Modern</h1>
+                    <h1>Design Pattern</h1>
+                </section>
+
+                <!-- about me -->
+                <section>
+                    <h2>about me</h2>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p>
+                                <ul>
+                                    <li><em>王文農 a.k.a Steven</em></li>
+                                    <li>Softleader Tech. Corp.</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="col-xs-6">
+                            <img style="width: 70%; height: auto;" src="img/steven-wang.jpg">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- design pattern-->
+                <section>
+                    <section>
+                        <h2>what is design pattern?</h2>
+                    </section>
+                    <section>
+                        <blockquote>Descriptions of communicating objects and classes that are customized to <em style="color: red;">solve a general design problem</em>.</blockquote>
+                        <p>–Gamma, et. al</p>
+                    </section>
+                    <section>
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <h3>GOF: 23</h3>
+                                <img src="img/design_patterns.jpg">
+                            </div>
+                            <div class="col-xs-5">
+                                <h3>very nice</h3>
+                                <img src="img/head_first_design_patterns.jpg">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>the one <strong style="color: pink;">constant</strong> in software development:</h3>
+                        <div class="fragment" >
+                            <h1 style="color: red;">change!</h1>
+                            <img src="img/i_knew_it.jpg">
+                        </div>
+                    </section>
+                    <section>
+                        <h3>tight coupling!</h3>
+                        <img src="img/tight_coupling.jpg">
+                    </section>
+                    <section>
+                        <h3>It might get you into trouble</h3>
+                        <img src="img/trouble.jpg">
+                    </section>
+                    <section>
+                        <h3>beware of</h3>
+                        <img src="img/smell.jpg">
+                    </section>
+                    <section>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <img style="width: 400px; height: 500px;" src="img/tdd.jpg">
+                            </div>
+                            <div class="col-xs-4">
+                                <img style="width: 400px; height: 500px;" src="img/refactoringBook.jpg">
+                            </div>
+                            <div class="col-xs-4">
+                                <img style="width: 400px; height: 500px;" src="img/r2p.jpg">
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- mvc -->
+                <section>
+                    <section>
+                        <h2>MVC pattern</h2>
+                    </section>
+                    <section>
+                        <h2>a Problem or a Solution ?</h2>
+                        <div class="fragment" class="row">
+                            <div class="col-xs-6">
+                                <p>
+                                    Commonly reasons:
+                                </p>
+                                <p>
+                                    <ul>
+                                        <li class="fragment">Reduced Code complexity</li>
+                                        <li class="fragment">Code reuse</li>
+                                        <li class="fragment">Increased flexibility</li>
+                                        <li class="fragment">Decoupled code</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <img src="img/Good-news.jpg">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>cool, sounds nice, but</h2>
+                        <div class="row fragment">
+                            <div class="col-xs-6">
+                                <ul>
+                                    <li>Is it true ?</li>
+                                    <li>Do all other patterns lack these cool things ?</li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6">
+                                <img src="img/resized_grandma-finds-the-internet-meme-generator-wait-wtf-did-you-just-say-cad194.jpg">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>The answer is NO!</h3>
+                        <p>
+                            <ul>
+                                <li class="fragment">Doesn't solve the code <em style="color: red;">complexity</em> problem</li>
+                                <li class="fragment">Doesn't solve the code <em style="color: red;">reuse</em> or <em style="color: red;">no-flexibility</em> problem</li>
+                                <li class="fragment">Doesn't guarantee <em style="color: red;">decoupled</em> code</li>
+                            </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>MVC components</h3>
+                        <img src="img/mvc_components.jpg">
+                    </section>
+                    <section>
+                        <h3>How MVC works</h3>
+                        <img src="img/mvc_detail.png">
+                    </section>
+                    <section>
+                        <img src="img/observer.png">
+                    </section>
+                    <section>
+                        <img src="img/strategy.png">
+                    </section>
+                    <section>
+                        <img src="img/composite.png">
+                    </section>
+                    <section>
+                        <h3>poor MVC give birth to</h3>
+                        <img src="img/mvc_compare.png">
+                    </section>
+                    <section>
+                        <h2><a href="http://localhost:8080/mvc/controller" target="_blank">MVC Demo with Servlet</a></h2>
+                    </section>
+                    <section>
+                        <h2>Model-View-Controller</h2>
+                        <img src="img/mvc_oldschool.png" height="404" width="350">
+                    </section>
+                    <section>
+                        <h3>Model</h3>
+                        <pre><code>public class Model {
+
+    private String name;
+
+    public void setName(String name) {
+        // business logic
+        this.name = name;
+    }
+
+    // for view access
+    public String getName() {
+        return name;
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>View</h3>
+                        <pre><code>&lt;%-- receive data --%&gt;
+&lt;h1&gt;Hello, ${model.name}&lt;/h1&gt;
+
+&lt;form action="controller" method="post"&gt;
+    &lt;label for="name"&gt;My name is &lt;/label&gt;
+    &lt;input type="text" id="name" name="name" value="${model.name}" /&gt;
+    &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Controller</h3>
+                        <pre><code>@WebServlet(value = "/controller")
+public class Controller extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // accepting request
+        String name = req.getParameter("name");
+
+        // validate request
+        if (name.isEmpty()) {
+            name = "Guest";
+        }
+
+        // use Model to do business logic
+        Model model = new Model();
+        model.setName(name);
+
+        // binding model to view
+        req.setAttribute("model", model);
+        // forward to view
+        req.getRequestDispatcher("/v/view.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // accepting request
+
+        // use Model to do business logic
+        Model model = new Model();
+        model.setName("Guest");
+
+        // binding model to view
+        req.setAttribute("model", model);
+        // forward to view
+        req.getRequestDispatcher("/v/view.jsp").forward(req, resp);
+    }
+
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2><a href="">MVP Demo with Vaadin</a></h2>
+                    </section>
+                    <section>
+                        <h2>Model-View-Presenter</h2>
+                        <div style="background-color: white;">
+                            <img src="img/mvp.gif">
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Model</h3>
+                        <pre><code>public class Model {
+
+    private String name;
+
+    public void setName(String name) {
+        // business logic
+        this.name = name;
+    }
+
+    // for presenter access
+    public String getName() {
+        return name;
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>View</h3>
+                        <pre><code>public class View extends CustomComponent {
+
+    private Label display = new Label("Hello, Guest");
+    private TextField name = new TextField("My name is ");
+    private Button button = new Button("Submit");
+
+    private Presenter presenter;
+
+    public View() {
+        // initial layout and presenter
+        initialLayout();
+        presenter = new Presenter(this);
+    }
+
+    protected void initialLayout() {
+        CustomLayout layout = new CustomLayout("view");
+        layout.addComponent(display, "display");
+        layout.addComponent(name, "name");
+        button.addClickListener(new ClickListener() {
+
+            @Override
+            public void buttonClick(ClickEvent event) {
+                // when button click then dispatch to presenter
+                presenter.changeDisplay();
+            }
+        });
+        layout.addComponent(button, "submit");
+        setCompositionRoot(layout);
+    }
+
+    // view provide getters & setters
+    public TextField getInput() {
+        return name;
+    }
+
+    public void setDisplay(String value) {
+        display.setValue(value);
+    }
+
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Presenter</h3>
+                        <pre><code>public class Presenter {
+
+    private View view;
+    private Model model;
+
+    public Presenter(View view) {
+        this.view = view;
+        this.model = new Model();
+    }
+
+    public void changeDisplay() {
+        String name = view.getInput().getValue();
+
+        // do some logic, eg: validate
+        if (name.isEmpty()) {
+            name = "Guest";
+        }
+
+        // call model
+        model.setName(name);
+
+        // control view
+        view.setDisplay("Hello, " + model.getName());
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2><a href="">MVVM Demo with ZK</a></h2>
+                    </section>
+                    <section>
+                        <h2>Model-View-ViewModel</h2>
+                        <img style="width: 50%; height: auto;" class="fragment" src="img/Mvvm-architecture.png">
+                        <img style="width: 50%; height: auto;" class="fragment" src="img/SmallTalk_MVVM_HELLO_FLOW.png">
+                    </section>
+                    <section>
+                        <h3>Model</h3>
+                        <pre><code>public class Model {
+
+    private String name;
+
+    public void setName(String name) {
+        // business logic
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>View</h3>
+                        <pre><code>&lt;zk&gt;
+    &lt;window title="MVVM Example" border="normal" width="100%"
+        apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('vm') @init('tw.jcconf.example.mvvm.vm.ViewModel')"&gt;
+        &lt;hbox&gt;
+            Hello, &lt;label value="@load(vm.model.name)" /&gt;
+        &lt;/hbox&gt;
+        &lt;hbox&gt;
+            &lt;label value="My name is " /&gt;&lt;textbox value="@bind(vm.name)" /&gt;
+            &lt;button onClick="@command('changeName')" label="Submit" /&gt;
+        &lt;/hbox&gt;
+    &lt;/window&gt;
+&lt;/zk&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>ViewModel</h3>
+                        <pre><code>public class ViewModel {
+
+    private String name;
+    private Model model;
+
+    public ViewModel() {
+        model = new Model();
+        model.setName(name = "Guest");
+    }
+
+    // event handler
+    @Command
+    @NotifyChange("model")
+    public void changeName() throws Exception {
+        model.setName(name);
+    }
+
+    // ViewModel provider getter & setter
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>RESTful pattern</h2>
+                    </section>
+                    <section>
+                        <blockquote>An architectural style that abstracts the architectural elements within a distributed hypermedia system.</blockquote>
+                        <p>–Wikipedia</p>
+                    </section>
+                    <section>
+                        <h2>The meas is</h2>
+                        <blockquote>
+                            <ul>
+                                <li class="fragment">Use HTTP methods explicitly.</li>
+                                <li class="fragment">Be stateless.</li>
+                                <li class="fragment">Expose directory structure-like URIs.</li>
+                                <li class="fragment">Transfer XML, JavaScript Object Notation (JSON), or both.</li>
+                            </ul>
+                        </blockquote>
+                        <p>–<a href="http://www.ibm.com/developerworks/webservices/library/ws-restful/">IBM's developerWorks website</a></p>
+                    </section>
+                    <section>
+                        <h2>What is REST ?</h2>
+                        <img src="img/what.jpg">
+                    </section>
+                    <section>
+                        <h2>HTTP itself is REST imelementation</h2>
+                        <img src="img/ok.jpg">
+                    </section>
+                    <section>
+                        <h2>How to use ?</h2>
+                        <p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>User Action</td>
+                                        <td>HTTP Method</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fragment">
+                                        <td>Create</td>
+                                        <td>POST/PUT</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td>Read (Retrieve)</td>
+                                        <td>GET</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td>Update (Modify)</td>
+                                        <td>PUT/PATCH</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td>Delete (Destroy)</td>
+                                        <td>DELETE</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>look alike</h2>
+                        <p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>User Action</td>
+                                        <td>SQL</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fragment">
+                                        <td>Create</td>
+                                        <td>INSERT</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td>Read (Retrieve)</td>
+                                        <td>SELECT</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td>Update (Modify)</td>
+                                        <td>UPDATE</td>
+                                    </tr>
+                                    <tr class="fragment">
+                                        <td>Delete (Destroy)</td>
+                                        <td>DELETE</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Follow HTTP to design RESTFul web service</h3>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <img src="img/RESTful-Triangle.png">
+                            </div>
+                            <div class="col-xs-6">
+                                <ul>
+                                    <li class="fragment">
+                                        Nouns
+                                        <p class="fragment">Define the URL for your resources</p>
+                                    </li>
+                                    <li class="fragment">
+                                        Verbs
+                                        <p class="fragment">Choose the right HTTP method</p>
+                                    </li>
+                                    <li class="fragment">
+                                        Content Types
+                                        <p class="fragment">Choose content-type which you want to return</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <iframe src="//www.slideshare.net/slideshow/embed_code/8759658" width="800" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+                    </section>
+                    <section>
+                        <h2>Create</h2>
+                        <p class="fragment"><font color="#2EFE2E">POST</font> <em>http://domain/books</em></p>
+                        <pre class="fragment"><code data-trim="contenteditable">
+{
+    "isbn": "123456789",
+    "title": "Modern Design Pattern",
+    "author": "Steven Wang",
+    "publisher": "JCConf TW",
+    "year": "2014"
+}
+                    </code></pre>
+                    <p class="fragment">HTTP/1.1 <em style="color: red;">200 | 401</em></p>
+                    <pre class="fragment"><code data-trim="contenteditable">
+{
+    "id": "9876543"
+}
+                    </code></pre>
+                    </section>
+                    <section>
+                        <h2>Read</h2>
+                        <div>
+                            <p class="fragment"><font color="#2EFE2E">GET</font> <em>http://domain/books/<font color="red">123456789</font></em></p>
+                            <p class="fragment">or</p>
+                            <p class="fragment"><font color="#2EFE2E">GET</font> <em>http://domain/books<font color="red">?isbn=123456789</font></em></p>
+                        </div>
+                    <p class="fragment">HTTP/1.1 <em style="color: red;">200 | 404</em></p>
+                    <pre class="fragment"><code data-trim="contenteditable">
+[{
+    "id": "9876543",
+    "isbn": "123456789",
+    "title": "Modern Design Pattern",
+    "author": "Steven Wang",
+    "publisher": "JCConf TW",
+    "year": "2014"
+}]
+                    </code></pre>
+                    </section>
+                    <section>
+                        <h2>Update</h2>
+                        <div>
+                            <p class="fragment"><font color="#2EFE2E">PUT</font> <em>http://domain/books/<font color="red">9876543</font></em></p>
+                            <p class="fragment">or</p>
+                            <p class="fragment"><font color="#2EFE2E">PUT</font> <em>http://domain/books</em></p>
+                        </div>
+                    <pre class="fragment"><code data-trim="contenteditable">
+{
+    ["id": "9876543",]
+    "isbn": "123456789",,
+    "title": "Modern Design Pattern",
+    "author": "Steven Wang",
+    "publisher": "JCConf TW",
+    "year": "2014"
+}
+                    </code></pre>
+                    <p class="fragment">HTTP/1.1 <em style="color: red;">200 |  401 |404</em></p>
+                    </section>
+                    <section>
+                        <h2>DELETE</h2>
+                        <div>
+                            <p class="fragment"><font color="#2EFE2E">DELETE</font> <em>http://domain/books/<font color="red">9876543</font></em></p>
+                            <p class="fragment">or</p>
+                            <p class="fragment"><font color="#2EFE2E">DELETE</font> <em>http://domain/books<font color="red">?isbn=9876543</font></em></p>
+                        </div>
+                    <p class="fragment">HTTP/1.1 <em style="color: red;">200 |  401 |404</em></p>
+                    </section>
+                    <section>
+                        <h2><a href="chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm/index.html" target="_blank">RESTful Demo with spring</a></h2>
+                    </section>
+                    <section>
+                        <pre><code>@RestController
+@RequestMapping("/books")
+public class BooksResource {
+
+    @Autowired
+    BookService service;
+
+    @RequestMapping(consumes = "application/json", produces = "application/json", method = RequestMethod.GET)
+    @ResponseBody
+    public List&lt;Book&gt; getAll() {
+        return service.getAll();
+    }
+
+    @RequestMapping(value = "/{isbn}", consumes = "application/json", produces = "application/json", method = RequestMethod.GET)
+    @ResponseBody
+    public Book getByIsbn(@PathVariable("isbn") String isbn) {
+        return service.getBookByIsbn(isbn);
+    }
+
+    @RequestMapping(consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @ResponseBody
+    public Book save(@RequestBody Book book) {
+        return service.save(book);
+    }
+
+    @RequestMapping(consumes = "application/json", produces = "application/json", method = RequestMethod.PUT)
+    @ResponseBody
+    public Book update(@RequestBody Book book) {
+        return service.update(book);
+    }
+
+    @RequestMapping(value = "/{id}", consumes = "application/json", produces = "application/json", method = RequestMethod.DELETE)
+    public void delete(@PathVariable("id") Long id) {
+        service.delete(id);
+    }
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>CQRS pattern</h2>
+                    </section>
+                    <section>
+                        <h2>What is CQRS ?</h2>
+                    </section>
+                    <section>
+                        <blockquote>CQRS is simply the creation of two objects where there was previously only one. The separation occurs based upon whether the methods are a <em style="color: red;">command</em> or a <em style="color: red;">query</em> (the same definition that is used by Meyer in Command and Query Separation, a command is any method that mutates state and a query is any method that returns a value).</blockquote>
+                        <p>–Wikipedia</p>
+                    </section>
+                    <section>
+                        <img src="img/say_what.jpg">
+                        <p>Say what?</p>
+                    </section>
+                    <section>
+                        <div class="fragment">
+                            <h3>Put another way...</h3>
+                            <p>Command/Query Responsibility Segregation (CQRS) is the idea that you can use a different model to update information than the model you use to read information.</p>
+                        </div>
+                        <br>
+                        <div class="fragment">
+                            <h3>In this context,</h3>
+                            <p>
+                                <ul>
+                                    <li>Commands = Writes</li>
+                                    <li>Queries = Reads</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Ok, but why ?</h3>
+                        <img src="img/ok_q.jpg">
+                    </section>
+                    <section>
+                        <h3>What is CQRS need ?</h3>
+                        <img src="img/what_is_cqrs_need.png">
+                    </section>
+                    <section>
+                        <div style="background-color: white;">
+                            <img src="img/single-model.png">
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Multi-user System</h3>
+                        <img src="img/multi_user_system.png">
+                    </section>
+                    <section>
+                        <h3>typical application of the CQRS pattern</h3>
+                        <img style="width: 70%; height: auto;" src="img/typical_application_of_the_CQRS_pattern.png">
+                    </section>
+                    <section>
+                        <h3>Commands and events in the CQRS pattern</h3>
+                        <img style="width: 70%; height: auto;" src="img/Commands_and_events_in_the_CQRS_pattern.png">
+                    </section>
+                    <section>
+                        <h3>When to avoid CQRS ?</h3>
+                        <blockquote>
+                            <p>So, when should you avoid CQRS?</p>
+                            <p>The answer is <em style="color: red;">most of the time</em>...</p>
+                        </blockquote>
+                        <p>–Udi Dahan</p>
+                    </section>
+                    <section>
+                        <h3>Ok, some suggestions</h3>
+                        <p>
+                            <ul>
+                                <li class="fragment">Large team.</li>
+                                <li class="fragment">Difficult business logic.</li>
+                                <li class="fragment">Scalability matters.</li>
+                                <li class="fragment">Your top people can work on domain logic.</li>
+                            </ul>
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>finally</h3>
+                    </section>
+                    <section>
+                        <h2>Patterns <em style="color: red;">don’t</em> solve problems,</h2>
+                        <h2>they <em style="color: yellow;">help</em> us</h2>
+                    </section>
+                    <section>
+                        <img src="img/QA.jpg">
+                    </section>
+                </section>
+            </div>
+        </div>
+
+    <script src="vendor/reveal.js/lib/js/head.min.js"></script>
+    <script type="text/javascript" src="vendor/reveal.js/js/reveal.js"></script>
+    <script type="text/javascript">
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            theme: Reveal.getQueryHash().theme,
+            transition: Reveal.getQueryHash().transition || 'default',
+            dependencies: [
+                { src: 'vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'vendor/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'vendor/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'vendor/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'vendor/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: 'vendor/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+        if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'vendor/reveal.js/css/print/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?link rel="shortcut icon" type="image/png" href="/favicon.png"?>
+<?page title="JCConf TW 2014 :: Modern Design Pattern | MVVM Example"?>
+<zk>
+    <window title="MVVM Example" border="normal" width="100%"
+        apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('vm') @init('tw.jcconf.example.mvvm.vm.ViewModel')">
+        <hbox>
+            Hello, <label value="@load(vm.model.name)" />
+        </hbox>
+        <hbox>
+            <label value="My name is " /><textbox value="@bind(vm.name)" />
+            <button onClick="@command('changeName')" label="Submit" />
+        </hbox>
+    </window>
+</zk>
