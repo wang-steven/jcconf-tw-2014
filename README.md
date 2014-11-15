@@ -1,6 +1,6 @@
 # JCConf TW 2014 - Modern Design Pattern
 
-[Jcconf Schedule Page](http://jcconf.tw/modern-design-pattern.html)
+[JCConf Schedule Page](http://jcconf.tw/modern-design-pattern.html)
 
 Location: 中央研究院 人文社會科學館
 
