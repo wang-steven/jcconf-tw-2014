@@ -5,3 +5,6 @@
 
 open your browser with
     http://localhost:8080/
+
+## License
+MIT
