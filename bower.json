@@ -1,8 +1,0 @@
-{
-  "name": "JCConfTW2014",
-  "version": "0.0.0",
-  "author": "Steven Wang",
-  "dependencies": {
-    "reveal.js": "~2.6.2"
-  }
-}
