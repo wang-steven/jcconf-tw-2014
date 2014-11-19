@@ -27,7 +27,6 @@ This is a static site, simply open index.html or use your favorite static file s
 You can also use the included development static server by running the following commands:
 
     npm install
-    npm run bower
     npm start
 
 ## Running Example Code locally

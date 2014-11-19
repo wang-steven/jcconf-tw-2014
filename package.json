@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "start": "gulp serve",
-    "bower": "bower install"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "bower": "^1.3.12",
